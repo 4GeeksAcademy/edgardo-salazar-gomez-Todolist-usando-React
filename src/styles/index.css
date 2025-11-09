@@ -1,11 +1,39 @@
-/* 
+/* Oculta el botón hasta hacer hover */
+.eliminar-btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.tarea-item:hover .eliminar-btn {
+  opacity: 1;
+}
 
-*/
+/* Animación para que aparezcan suavemente una tras otra */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Asegurar que las tareas se vean una debajo de otra */
+ul.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* espacio entre tareas */
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
