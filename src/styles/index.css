@@ -4,6 +4,15 @@
   transition: opacity 0.3s ease;
 }
 
+.eliminar-btn i {
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.eliminar-btn:hover i {
+  color: crimson; /* cambia a rojo al pasar el mouse */
+}
+
 .tarea-item:hover .eliminar-btn {
   opacity: 1;
 }
@@ -36,4 +45,8 @@ ul.list-group {
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
+}
+.tarea-item span {
+  flex-grow: 1;
+  word-break: break-word;
 }
