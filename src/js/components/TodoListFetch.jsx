@@ -125,8 +125,8 @@ export function TodoListFetch() {
           <input
             className="form-control"
             value={editTask.label}
-            onChange={(e) =>
-              setEditTask({ ...editTask, label: e.target.value })
+            onChange={(event) =>
+              setEditTask({ ...editTask, label: event.target.value })
             }
           />
 
@@ -135,8 +135,8 @@ export function TodoListFetch() {
               className="form-check-input"
               type="checkbox"
               checked={editTask.is_done}
-              onChange={(e) =>
-                setEditTask({ ...editTask, is_done: e.target.checked })
+              onChange={(event) =>
+                setEditTask({ ...editTask, is_done: event.target.checked })
               }
             />
             <label className="form-check-label">Completed</label>
@@ -157,7 +157,7 @@ export function TodoListFetch() {
       )}
 
       {/* LISTADO DE TAREAS */}
-      <h4>Listado de tareas</h4>
+      <h4 className="text-primary">Listado de tareas</h4>
 
       <ul className="list-group">
         {todos.map((task) => (
@@ -179,7 +179,7 @@ export function TodoListFetch() {
 
             {/* Botón editar */}
             <button
-              className="btn btn-sm btn-warning me-2"
+              className="btn btn-sm btn-success me-2"
               onClick={() => handleEdit(task)}
             >
               <i className="bi bi-pencil-fill"></i>
@@ -187,7 +187,7 @@ export function TodoListFetch() {
 
             {/* Botón borrar */}
             <button
-              className="btn btn-sm btn-danger"
+              className="btn btn-sm btn-secondary"
               onClick={() => handleDelete(task.id)}
             >
               <i className="bi bi-trash-fill"></i>
